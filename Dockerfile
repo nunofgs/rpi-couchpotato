@@ -1,12 +1,11 @@
-FROM ubuntu:14.04
-MAINTAINER Tim Haak <tim@haak.co.uk>
+FROM resin/rpi-raspbian
+MAINTAINER Nuno Sousa <nunofgs@gmail.com>
 
 RUN apt-get -q update
 RUN apt-get -qy --force-yes dist-upgrade
 
 RUN apt-get install -qy --force-yes  python git-core
 RUN git clone https://github.com/RuudBurger/CouchPotatoServer.git /CouchPotatoServer
-
 
 VOLUME /config
 VOLUME /data
