@@ -1,14 +1,13 @@
-#docker couchpotato
+# CouchPotato for Raspberry Pi 2
 
-This is a Dockerfile to set up "CouchPotato" - (https://couchpota.to/)
+This is a Dockerfile to set up [CouchPotato](https://couchpota.to/).
 
-Build from docker file
+# Usage
 
+```shell
+$ docker run \
+  -p 5050:5050
+  -v /mnt/data:/data
+  -v ./config:/config
+  nunofgs/rpi-couchpotato
 ```
-git clone https://github.com/timhaak/docker-couchpotato.git
-cd docker-couchpotato
-docker build -t couchpotato .
-```
-
-docker run -d -h *your_host_name* -v /*your_config_location*:/config  -v /*your_videos_location*:/data -p 5050:5050 --name couchpotato couchpotato
-
